@@ -12,8 +12,8 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderControlCharacters": true,
     "editor.rulers": [
-        80,
-        120
+        79,
+        88
     ],
     "editor.showFoldingControls": "always",
     "editor.snippetSuggestions": "top",
@@ -56,13 +56,14 @@
         "**/tmp/**": true,
         "**/vendor/**": true
     },
-    "git.enabled": false,
+    "git.enabled": true,
+    "git-path": "/usr/bin/git",
     "notebook.diff.ignoreMetadata": true,
     "notebook.lineNumbers": "on",
     "notebook.markup.fontSize": 13,
-    "python.defaultInterpreterPath": "~/.pyenv/shims/python",
+    "python.defaultInterpreterPath": "/home/stefanie/.pyenv/versions/3.10.6/envs/lewagon_current",
     "python.formatting.provider": "yapf",
-    "python.languageServer": "Pylance",
+    "python.languageServer": "Jedi",
     "python.linting.enabled": false,
     "python.linting.flake8Enabled": false,
     "python.linting.pylintEnabled": false,
@@ -80,4 +81,18 @@
     "workbench.settings.useSplitJSON": true,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.panel.defaultLocation": "right",
+    "jupyter.askForKernelRestart": false,
+    "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "left"
+    },
+    "editor.stickyScroll.enabled": true,
+    "rewrap.wholeComment": false,
+    "justMyCode": false,
+    "workbench.colorTheme": "Default Dark+",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "quicknotes.config.notesLocation": "/home/stefanie/quick-notes",
+    "quicknotes.config.notesFolderList": [
+      "/home/stefanie/quick-notes"
+    ],
 }

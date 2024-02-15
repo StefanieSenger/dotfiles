@@ -11,7 +11,7 @@
 
 [core]
   pager = less -FRSX
-  editor = code --wait
+	editor = vim
 
 [alias]
   co = checkout
@@ -55,3 +55,10 @@
 [user]
 	email = stefanie.senger@posteo.de
 	name = Stefanie Senger
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = cache

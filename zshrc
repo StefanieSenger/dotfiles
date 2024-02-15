@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search)
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv ssh-agent direnv)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -65,8 +65,32 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export BUNDLER_EDITOR=code
-export EDITOR=code
-
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+eval "$(direnv hook $SHELL)"
+
+# Manually added for ml-zoomcamp, 09/2022 (for being able to run docker-compose from anywhere)
+export PATH="${HOME}/soft:${PATH}"
+
+# Manually added for overthewire, 09/2022
+export WECHALLUSER="instead"
+export WECHALLTOKEN="DF031-EF88C-D2497-91C3F-A1C13-23A5F"
+
+# Manually added for being able to import the olist module from everywhere without needing to install it, 01/2023
+# export PYTHONPATH="/home/stefanie/code/lewagon/data/04-Decision-Science/01-Project-Setup/context-and-setup:$PYTHONPATH"
+
+# to prevent error message "pyenv badly configured", 02/2023
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --no-rehash -)"
+fi
+
+# to turn vim into the default text editor, 06/2023 <-- is overpowered by github configurations (git config --get core.editor returns code --wait), I could change that with: git config --global core.editor "vim"
+export EDITOR=vim
+export VISUAL="$EDITOR"
+
+# add miniconda path, so that conda works, comment out when not using conda 12/2023
+# export PATH="/home/stefanie/miniconda3/bin:$PATH"
+export PATH=$PATH:/home/stefanie/.pixi/bin
