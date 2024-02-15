@@ -73,10 +73,6 @@ eval "$(direnv hook $SHELL)"
 # Manually added for ml-zoomcamp, 09/2022 (for being able to run docker-compose from anywhere)
 export PATH="${HOME}/soft:${PATH}"
 
-# Manually added for overthewire, 09/2022
-export WECHALLUSER="instead"
-export WECHALLTOKEN="DF031-EF88C-D2497-91C3F-A1C13-23A5F"
-
 # Manually added for being able to import the olist module from everywhere without needing to install it, 01/2023
 # export PYTHONPATH="/home/stefanie/code/lewagon/data/04-Decision-Science/01-Project-Setup/context-and-setup:$PYTHONPATH"
 
